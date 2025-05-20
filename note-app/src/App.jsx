@@ -32,7 +32,6 @@ export default function App() {
     setSelectedNote(null);
   };
 
-  // Updated updateNote function
   const updateNote = (updatedNote) => {
     setNotes(
       notes.map((note) =>
@@ -41,11 +40,10 @@ export default function App() {
           : note
       )
     );
-    // Update selected note immediately
+
     setSelectedNote(updatedNote);
   };
 
-  // Fixed input handlers
   const handleTitleChange = (e) => {
     const updatedNote = { ...selectedNote, title: e.target.value };
     updateNote(updatedNote);
