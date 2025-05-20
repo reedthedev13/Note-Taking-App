@@ -48,7 +48,6 @@ export default function App() {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-900 dark:to-gray-800 flex">
-      {/* Sidebar */}
       <div className="w-64 bg-white dark:bg-gray-800 border-r border-gray-200 dark:border-gray-700 flex flex-col transition-all duration-300">
         <div className="p-4 border-b border-gray-200 dark:border-gray-700">
           <button
@@ -103,7 +102,6 @@ export default function App() {
         </div>
       </div>
 
-      {/* Main Editor */}
       <div className="flex-1 p-8">
         {selectedNote ? (
           <div className="max-w-3xl mx-auto animate-fade-in">
