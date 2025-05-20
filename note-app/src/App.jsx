@@ -32,18 +32,28 @@ export default function App() {
     setSelectedNote(null);
   };
 
+  // Updated updateNote function
   const updateNote = (updatedNote) => {
     setNotes(
       notes.map((note) =>
         note.id === updatedNote.id
-          ? {
-              ...updatedNote,
-              lastModified: new Date().toISOString(),
-              title: updatedNote.title || "Untitled Note",
-            }
+          ? { ...updatedNote, lastModified: new Date().toISOString() }
           : note
       )
     );
+    // Update selected note immediately
+    setSelectedNote(updatedNote);
+  };
+
+  // Fixed input handlers
+  const handleTitleChange = (e) => {
+    const updatedNote = { ...selectedNote, title: e.target.value };
+    updateNote(updatedNote);
+  };
+
+  const handleContentChange = (e) => {
+    const updatedNote = { ...selectedNote, content: e.target.value };
+    updateNote(updatedNote);
   };
 
   return (
